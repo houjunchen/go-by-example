@@ -57,8 +57,6 @@ func (mds *MemoryDataStore) FindUserById(id int64) (string, error) {
 	return username, nil
 }
 
-type DataStoreFactory func(conf map[string]string) (DataStore, error)
-
 func NewPostgreSQLDataStore(conf map[string]string) (DataStore, error) {
 	dsn, ok := conf.Get("DATASTORE_POSTGRES_DSN", "")
 	if !ok {
@@ -86,6 +84,8 @@ func NewMemoryDataStore(conf map[string]string) (DataStore, error) {
 		RWMutex: &sync.RWMutex{},
 	}, nil
 }
+
+type DataStoreFactory func(conf map[string]string) (DataStore, error)
 
 var datastoreFactories = make(map[string]DataStoreFactory)
 
