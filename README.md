@@ -1,1 +1,1 @@
-Golang examples from https://gobyexample.com/.
+Golang examples from https://gobyexample.com/ and somewhere else.
