@@ -3,9 +3,20 @@ package main
 
 import "fmt"
 
+func testzz(args ...interface{}) error {
+	fmt.Println(args)
+	return nil
+}
+
 func main() {
 	a := []int{1, 2, 3, 4, 5}
 	b := []int{7, 8, 9}
+
+	gg := []interface{}{"ggg", 123411}
+	gg = append(gg, "test")
+	gg = append(gg, 1234)
+	fmt.Println(gg)
+	_ = testzz(gg...)
 
 	// AppendVector
 	a = append(a, b...)
