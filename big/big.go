@@ -17,6 +17,6 @@ func main() {
 	} else {
 		fmt.Println(i)
 	}
-	is := fmt.Sprintln(i)
+	is := fmt.Sprintf("%s", i)
 	fmt.Println(is)
 }
